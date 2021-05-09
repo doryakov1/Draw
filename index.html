@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MisterCanvas</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+
+    <nav class="main-nav flex justify-center  ">
+        <ul class="main-nav-list  clean-list flex justify-center ">
+            <li><input onchange="colorChange(this.value ,'backgroundcolor')" type="color"></input>
+                <li><input onchange="colorChange(this.value ,'color')" type="color"></input>
+                    <li>
+                        <select class="drawing-options" onchange="drawingOptions()">
+                         <option value="Mountion">Mountion</option>
+                         <option value="Sketchy">Sketchy</option>
+                         <option value="Waves">Waves</option>
+                         <option value="Lines">Lines</option>
+                         <option value="Grid">Grid</option>
+                         <option value="Simple">Simple</option>
+                         <option value="Squares">Squares</option>
+                         <option value="Umbrella">Umbrella</option>
+                         <option value="Circles">Circles</option>
+                         <option value="Shaded">Shaded</option>
+                       </select>
+                    </li>
+                    <li><button onclick="clearCanvas()">Clear</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <canvas onmousemove="mouseMove(event)" onclick="drawing(event)" class="my-canvas">
+
+        </canvas>
+    </main>
+    <footer>
+        <a href="#" onclick="downloadCanvas(this)" download="">Save</a>
+    </footer>
+
+    <script src="js/misterCanvasMain.js"></script>
+    <script src="js/misterCanvasService.js"></script>
+</body>
+
+</html>
